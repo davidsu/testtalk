@@ -1,10 +1,7 @@
 # TEST TALK
 
-## Second Attempt
+## With Testkit
 
-There are several issues here:
+here each piece of state is handled by the owner of the state, each mock is handled by whoever needs the mock.
 
-1. We end up having many different tests mocking the same data. When we change the data structure tests are still green.
-2. It isn't DRY
-3. We need to understand many levels deep the dependecies so we can mock what can't be loaded on a test environement.
-4. our tests come out very verbose because it has so much setup to do.
+This way the system that we run through tests is the same (as close to as possible) the live production system.
