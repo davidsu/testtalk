@@ -3,15 +3,15 @@
 //our test doesn't have to know how to mock everything so the application will load
 const veryImportantFactory = require('../src/veryImportantStuff')
 const userInfoFactory = require('../src/userInfo')
-const DAL = require('../src/DAL')
+const DALfactory = require('../src/DAL')
 
 jest.mock('../src/state', () => ({
     currentUser: { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
 }))
 describe('getCurrentUser', () => {
-    beforeEach(() => state = {})
     it('should set application state when current user is veryImportantFactory important', () => {
         currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
+        const DAL = DALfactory({currentUser})
         const importantStuff = veryImportantFactory(userInfoFactory(DAL), DAL)
         importantStuff.setVeryImportantUserState()
         expect(DAL.getByPath('importantUser')).toBeTruthy()
