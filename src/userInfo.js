@@ -5,10 +5,9 @@ export default function(DAL) {
         setCurrentUser: user => {
             const realMail = user.mail
                                 .replace(/\+.*@/g, '@')
-            .replace(/\.(.*)@/g, '$1@')
+                                .replace(/\.(.*)@/g, '$1@')
             DAL.setByPath('currentUser', user)
             // DAL.setByPath('currentUser', {realMail, ...user})
         }
     }
 }
-
