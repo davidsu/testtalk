@@ -1,7 +1,10 @@
-#!/usr/bin/env node
-const DAL = require('./src/DAL')({})
-const userInfo = require('./src/userInfo')(DAL)
-const veryImportantStuff = require('./src/veryImportantStuff')(userInfo, DAL)
+import DALfactory from './src/DAL.js'
+import userInfoFactory from './src/userInfo.js'
+import veryImportantStuffFactory from './src/veryImportantStuff.js'
+
+const DAL = DALfactory({})
+const userInfo = userInfoFactory(DAL)
+const veryImportantStuff = veryImportantStuffFactory(userInfo, DAL)
 
 userInfo.setCurrentUser({ mail: 'eli.b@walkme.com', name: 'Eli Blitz' })
 veryImportantStuff.setVeryImportantUserState()
