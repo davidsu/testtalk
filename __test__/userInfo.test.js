@@ -5,5 +5,6 @@ describe('userInfo', () => {
                             .with.currentUser({mail: 'baba'})
                             .build()
         expect(userInfo.getCurrentUser()).toEqual({mail: 'baba', name: 'Dummy User'})
+        // expect(userInfo.getUser()).toEqual({mail: 'baba', name: 'Dummy User'})
     })
 })
