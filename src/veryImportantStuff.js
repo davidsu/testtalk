@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import chalk from 'chalk'
-export default (userInfo, DAL) => {
+export default function(userInfo, DAL) {
     const veryImportantUsers = [
         { mail: 'eli.b@walkme.com', name: 'Eli Blitz' },
         { mail: 'omri.ey@walkme.com', name: 'Omri Eyal' },

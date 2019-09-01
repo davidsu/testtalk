@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-export default state => {
+export default function(state) {
     function setByPath(path, value) {
         _.set(state, path, value)
     }

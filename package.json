@@ -5,8 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node --no-warnings --experimental-modules ./runSystem.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
