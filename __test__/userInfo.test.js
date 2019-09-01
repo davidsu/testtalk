@@ -1,4 +1,4 @@
-const UserInfotestKit = require('./userInfo.testkit.js')
+import UserInfotestKit from './userInfo.testkit.js'
 describe('userInfo', () => {
     it('should get current user', () => {
         const {userInfo} = UserInfotestKit()

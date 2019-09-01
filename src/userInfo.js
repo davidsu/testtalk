@@ -1,4 +1,4 @@
-module.exports = DAL => ({
+export default DAL => ({
     getCurrentUser: () => DAL.getByPath('currentUser'), //set default to null to fail test
     // getUser: () => DAL.getByPath('currentUser'), //set default to null to fail test
     setCurrentUser: user => {

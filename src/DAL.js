@@ -1,6 +1,6 @@
-const _ = require('lodash')
+import _ from 'lodash'
 
-module.exports = state => {
+export default state => {
     function setByPath(path, value) {
         _.set(state, path, value)
     }

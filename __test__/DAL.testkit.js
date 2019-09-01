@@ -1,6 +1,5 @@
-const DAL = require('../src/DAL')
-const _ = require('lodash')
-const state = {}
+import DAL from '../src/DAL'
+import _ from 'lodash'
 module.exports = () => {
     const data = {}
     const testKit =  {

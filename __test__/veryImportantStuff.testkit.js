@@ -1,6 +1,6 @@
-const veryImportantStuff = require('../src/veryImportantStuff')
-const userInfo = require('./userInfo.testkit')
-const _ = require('lodash')
+import veryImportantStuff from '../src/veryImportantStuff'
+import userInfo from './userInfo.testkit'
+import _ from 'lodash'
 module.exports = () => {
     const userInfoTestKit = userInfo()
     const testKit =  {

@@ -1,7 +1,7 @@
 //lets mock only the application state
 //in a real world application this isn't feasible because many of the dependencies won't work on testTime and need mocking
 //our test doesn't have to know how to mock everything so the application will load
-const testkitFactory  = require('./veryImportantStuff.testkit')
+import testkitFactory from'./veryImportantStuff.testkit'
 
 describe('getCurrentUser', () => {
     it('should set application state when current user is veryImportantFactory important', () => {

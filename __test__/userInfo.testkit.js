@@ -1,7 +1,7 @@
-const userInfo = require('../src/userInfo')
-const DAL = require('./DAL.testkit.js')
-const _ = require('lodash')
-module.exports = () => {
+import _ from 'lodash'
+import userInfo from '../src/userInfo'
+import DAL from './DAL.testkit.js'
+export default () => {
     const DALtestKit = DAL()
     let currentUser = { 
         mail: 'dumm.y@mail.com', 
@@ -12,7 +12,7 @@ module.exports = () => {
         with: {
             currentUser: user => {
                 currentUser = {...currentUser, ...user}
-                // currentUser = _.pick(currentUser, ['mail', 'name'])
+                currentUser = _.pick(currentUser, ['mail', 'name'])
                 DALtestKit.with.data({currentUser})
                 return testKit
             }
