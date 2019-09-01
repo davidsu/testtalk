@@ -1,4 +1,4 @@
-const factory = require('../src/veryImportantStuff')
+import veryImportantFactory from '../src/veryImportantStuff'
 let currentUser;
 let state = {}
 const mockUserInfo = {
@@ -12,7 +12,7 @@ describe('getCurrentUser', () => {
     beforeEach(() => state = {})
     it('should return empty user when not loggedin', () => {
         currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
-        const importantStuff = factory(mockUserInfo, mockDAL)
+        const importantStuff = veryImportantFactory(mockUserInfo, mockDAL)
         importantStuff.setVeryImportantUserState()
         expect(state).toEqual({importantUser: true})
     })

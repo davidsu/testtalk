@@ -5,12 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node --no-warnings --experimental-modules ./runSystem.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-env": "^7.5.5",
     "chalk": "^2.4.2",
     "jest": "^24.9.0",
     "lodash": "^4.17.15"

@@ -1,6 +1,6 @@
-const _ = require('lodash')
-const chalk = require('chalk')
-module.exports = (userInfo, DAL) => {
+import _ from 'lodash'
+import chalk from 'chalk'
+export default function(userInfo, DAL) {
     const veryImportantUsers = [
         { mail: 'eli.b@walkme.com', name: 'Eli Blitz' },
         { mail: 'omri.ey@walkme.com', name: 'Omri Eyal' },
