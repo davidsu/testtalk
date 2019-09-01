@@ -1,10 +1,8 @@
 const veryImportantStuff = require('../src/veryImportantStuff')
-const DAL = require('./DAL.testkit')
 const userInfo = require('./userInfo.testkit')
 const _ = require('lodash')
 module.exports = () => {
-    const DALtestkit = DAL()
-    const userInfoTestKit = userInfo(DALtestkit)
+    const userInfoTestKit = userInfo()
     const testKit =  {
         with: {
             currentUser: user => {
@@ -13,8 +11,7 @@ module.exports = () => {
             }
         },
         build: () => {
-            const DAL = DALtestkit.build()
-            const userInfo = userInfoTestKit.build(DAL)
+            const {userInfo, DAL} = userInfoTestKit.build()
             return {
                 veryImportantStuff: veryImportantStuff(userInfo, DAL),
                 DAL
