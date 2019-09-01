@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "node --experimental-modules ./runSystem.js"
+    "start": "node --no-warnings --experimental-modules ./runSystem.js"
   },
   "type": "module",
   "keywords": [],
