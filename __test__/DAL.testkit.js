@@ -1,13 +1,11 @@
 import DAL from '../src/DAL'
 import _ from 'lodash'
-module.exports = () => {
+export default () => {
     const data = {}
     const testKit =  {
-        with: {
-            data: moreData => {
-                _.merge(data, moreData)
-                return testKit
-            }
+        withData: moreData => {
+            _.merge(data, moreData)
+            return testKit
         },
         build: () => DAL(data)
     }

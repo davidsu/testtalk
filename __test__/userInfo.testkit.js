@@ -1,29 +1,20 @@
 import _ from 'lodash'
 import userInfo from '../src/userInfo'
-import DAL from './DAL.testkit.js'
-export default () => {
-    const DALtestKit = DAL()
+export default (appTestKit) => {
     let currentUser = { 
         mail: 'dumm.y@mail.com', 
         name: 'Dummy User', 
         // realMail: 'dummy@mail.com'
     }
     const testKit =  {
-        with: {
-            currentUser: user => {
-                currentUser = {...currentUser, ...user}
-                currentUser = _.pick(currentUser, ['mail', 'name'])
-                DALtestKit.with.data({currentUser})
-                return testKit
-            }
+        withCurrentUser: user => {
+            currentUser = {...currentUser, ...user}
+            currentUser = _.pick(currentUser, ['mail', 'name'])
+            // currentUser = _.pick(currentUser, ['mail', 'name', 'realMail'])
+            appTestKit.withData({currentUser})
+            return testKit
         },
-        build: () => {
-            const DAL = DALtestKit.build()
-            return  {
-                userInfo: userInfo(DAL),
-                DAL
-            }
-        }
+        build: () =>  userInfo(appTestKit.DAL)
     }
     return testKit
 }
