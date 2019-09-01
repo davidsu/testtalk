@@ -1,10 +1,6 @@
-import DALfactory from './src/DAL.js'
-import userInfoFactory from './src/userInfo.js'
-import veryImportantStuffFactory from './src/veryImportantStuff.js'
+import app from './src/app.js'
 
-const DAL = DALfactory({})
-const userInfo = userInfoFactory(DAL)
-const veryImportantStuff = veryImportantStuffFactory(userInfo, DAL)
+const {DAL, userInfo, veryImportantStuff} = app()
 
 userInfo.setCurrentUser({ mail: 'eli.b@walkme.com', name: 'Eli Blitz' })
 veryImportantStuff.setVeryImportantUserState()
