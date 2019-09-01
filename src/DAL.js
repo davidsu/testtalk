@@ -8,6 +8,7 @@ function getByPath(path, default = {}) {
     _.get(state, path)
 }
 module.exports = {
-    setByPath
+    setByPath,
+    getByPath
 }
 
