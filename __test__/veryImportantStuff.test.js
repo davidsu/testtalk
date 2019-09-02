@@ -8,4 +8,9 @@ describe('getCurrentUser', () => {
         veryImportantStuff.setVeryImportantUserState()
         expect(DAL.getByPath('importantUser')).toBeTruthy()
     })
+
+    it('should throw for user that is not very important', () => {
+        const {veryImportantStuff} = testkit().build()
+        expect(veryImportantStuff.setVeryImportantUserState).toThrow('dummy is not important')
+    })
 })

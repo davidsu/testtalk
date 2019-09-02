@@ -4,7 +4,7 @@ describe('userInfo', () => {
         const {userInfo} = testkit()
                             .withCurrentUser({mail: 'a@b.com'})
                             .build()
-        expect(userInfo.getCurrentUser()).toEqual({mail: 'a@b.com', name: 'Dummy User'})
+        expect(userInfo.getCurrentUser()).toEqual({mail: 'a@b.com', name: 'dummy'})
         // expect(userInfo.getUser()).toEqual({mail: 'a@b.com', name: 'Dummy User', realMail: 'dummy@mail.com'})
     })
     it('should get current user after setting it', () => {
