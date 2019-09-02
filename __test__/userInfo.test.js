@@ -7,5 +7,7 @@ describe('userInfo', () => {
         const userInfo = userInfoFactory(DAL)
         userInfo.setCurrentUser(currentUser)
         expect(userInfo.getCurrentUser()).toEqual(currentUser)
+        // expect(userInfo.getUser()).toEqual(currentUser)
+        // expect(userInfo.getUser()).toEqual({realMail: 'mock@walkme.com', ...currentUser})
     })
 })
