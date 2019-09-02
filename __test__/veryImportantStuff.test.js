@@ -17,7 +17,7 @@ describe('getCurrentUser', () => {
         expect(state).toEqual({importantUser: true})
     })
 
-    it('shouldd throw for user that is not very important', () => {
+    it('should throw for user that is not very important', () => {
         currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
         const importantStuff = veryImportantFactory(mockUserInfo, mockDAL)
         expect(importantStuff.setVeryImportantUserState).toThrow('dummy is not important')
