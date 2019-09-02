@@ -13,4 +13,11 @@ describe('getCurrentUser', () => {
         importantStuff.setVeryImportantUserState()
         expect(DAL.getByPath('importantUser')).toBeTruthy()
     })
+
+    it('shouldd throw for user that is not very important', () => {
+        const currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
+        const DAL = DALfactory({currentUser})
+        const importantStuff = veryImportantFactory(userInfoFactory(DAL), DAL)
+        expect(importantStuff.setVeryImportantUserState).toThrow('dummy is not important')
+    })
 })
