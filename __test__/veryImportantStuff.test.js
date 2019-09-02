@@ -6,7 +6,7 @@ import userInfoFactory from '../src/userInfo'
 import DALfactory from '../src/DAL'
 
 describe('getCurrentUser', () => {
-    it('should set application state when current user is veryImportantFactory important', () => {
+    it('should set application state when current user is veryImportant', () => {
         const currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
         const DAL = DALfactory({currentUser})
         const importantStuff = veryImportantFactory(userInfoFactory(DAL), DAL)
@@ -14,7 +14,7 @@ describe('getCurrentUser', () => {
         expect(DAL.getByPath('importantUser')).toBeTruthy()
     })
 
-    it('shouldd throw for user that is not very important', () => {
+    it('should throw for user that is not very important', () => {
         const currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
         const DAL = DALfactory({currentUser})
         const importantStuff = veryImportantFactory(userInfoFactory(DAL), DAL)
