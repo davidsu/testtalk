@@ -1,7 +1,6 @@
 export default function(DAL) {
     return {
-        getCurrentUser: () => DAL.getByPath('currentUser'), //set default to null to fail test
-        // getUser: () => DAL.getByPath('currentUser'), //set default to null to fail test
+        getCurrentUser: () => DAL.getByPath('currentUser'),
         setCurrentUser: user => {
             DAL.setByPath('currentUser', user)
             // const realMail = user.mail
