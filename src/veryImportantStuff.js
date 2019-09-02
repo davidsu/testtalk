@@ -6,6 +6,7 @@ const veryImportantUsers = [
     { mail: 'omri.ey@walkme.com', name: 'Omri Eyal' },
 ]
 const userIsImportant = currentUser => !!veryImportantUsers.find(user => _.isEqual(currentUser, user))
+// const userIsImportant = ({mail, name}) => !!veryImportantUsers.find(user => _.isEqual({mail, name}, user))
 
 export default function(userInfo, DAL) {
 
