@@ -22,3 +22,4 @@ export default function(userInfo, DAL) {
         setVeryImportantUserState
     }
 }
+
