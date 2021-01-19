@@ -5,16 +5,16 @@ import { setVeryImportantUserState } from '../src/veryImportantStuff'
 import DAL from '../src/DAL'
 import * as userInfo from '../src/userInfo'
 describe('getCurrentUser', () => {
-    it('should set application state when current user is veryImportant', () => {
-        const currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
-        DAL.resetState({currentUser})
-        setVeryImportantUserState()
-        expect(DAL.getByPath('importantUser')).toBeTruthy()
-    })
+  it('should set application state when current user is veryImportant', () => {
+    const currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
+    DAL.resetState({currentUser})
+    setVeryImportantUserState()
+    expect(DAL.getByPath('importantUser')).toBeTruthy()
+  })
 
-    it('should throw for user that is not very important', () => {
-        const currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
-        DAL.resetState({currentUser})
-        expect(setVeryImportantUserState).toThrow('dummy is not important')
-    })
+  it('should throw for user that is not very important', () => {
+    const currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
+    DAL.resetState({currentUser})
+    expect(setVeryImportantUserState).toThrow("dummy can't be important!!!")
+  })
 })

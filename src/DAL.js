@@ -2,16 +2,16 @@ import _ from 'lodash'
 let state = {}
 
 function setByPath(path, value) {
-        _.set(state, path, value)
+  _.set(state, path, value)
 }
 function getByPath(path, defaultValue = {}) {
-        return _.get(state, path, defaultValue)
+  return _.get(state, path, defaultValue)
 }
 const runTimeDal = {
-        setByPath,
-        getByPath
+  setByPath,
+  getByPath
 }
 if(process.env.TEST) {
-    runTimeDal.resetState = initialState => state = initialState
+  runTimeDal.resetState = initialState => state = initialState
 }
 export default runTimeDal
