@@ -1,14 +1,11 @@
-import DALfactory from './DAL.js'
-import userInfoFactory from './userInfo.js'
-import veryImportantStuffFactory from './veryImportantStuff.js'
+import { setVeryImportantUserState } from './veryImportantStuff.js'
+import * as userInfo from './userInfo.js'
+import runTimeDal from './DAL.js'
 
-export default function(initialState = {}) {
-    const DAL = DALfactory(initialState)
-    const userInfo = userInfoFactory(DAL)
-    const veryImportantStuff = veryImportantStuffFactory(userInfo, DAL)
-    return {
-        DAL,
-        userInfo,
-        veryImportantStuff
-    }
+export default function() {
+  return {
+    getByPath: runTimeDal.getByPath,
+    setVeryImportantUserState,
+    userInfo
+  }
 }

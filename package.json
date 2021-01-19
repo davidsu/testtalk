@@ -9,18 +9,25 @@
     "userinfo": "jest __test__/userInfo.test.js",
     "start": "node --no-warnings --experimental-modules ./runSystem.js"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/preset-env": "^7.5.5",
+    "@walkme/testutils": "^1.15.0",
     "chalk": "^2.4.2",
+    "eslint": "^7.18.0",
     "jest": "^24.9.0",
+    "json-colorizer": "^2.2.2",
     "lodash": "^4.17.15"
   },
   "jest": {
-    "setupFiles": ["./test-setup.js"],
-    "collectCoverageFrom": ["src**/*.js", "!src/app.js"]
+    "setupFiles": [
+      "./test-setup.js"
+    ],
+    "collectCoverageFrom": [
+      "src**/*.js",
+      "!src/app.js"
+    ]
   }
 }
