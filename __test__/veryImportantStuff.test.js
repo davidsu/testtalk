@@ -17,7 +17,7 @@ describe('getCurrentUser', () => {
         jest.spyOn(runTimeDal, 'setByPath').mockImplementation((path, value) => state[path] = value)
     })
     it('should set importantUser', () => {
-        currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
+        currentUser = { mail: 'assaf.gannon@walkme.com', name: 'Assaf Gannon' }
         setVeryImportantUserState()
         expect(state).toEqual({importantUser: true})
     })

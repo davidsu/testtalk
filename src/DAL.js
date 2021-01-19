@@ -11,7 +11,4 @@ const runTimeDal = {
         setByPath,
         getByPath
 }
-if(process.env.TEST) {
-    runTimeDal.resetState = initialState => state = initialState
-}
 export default runTimeDal
