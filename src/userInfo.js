@@ -1,12 +1,9 @@
-export default function(DAL) {
-    return {
-        getCurrentUser: () => DAL.getByPath('currentUser'),
-        setCurrentUser: user => {
-            DAL.setByPath('currentUser', user)
-            // const realMail = user.mail
-            //                     .replace(/\+.*@/g, '@')
-            //                     .replace(/\.(.*)@/g, '$1@')
-            // DAL.setByPath('currentUser', {realMail, ...user})
-        }
-    }
-}
+import runTimeDal  from './DAL.js'
+export const getCurrentUser = () => runTimeDal.getByPath('currentUser')
+export const setCurrentUser = user => runTimeDal.setByPath('currentUser', user)
+// export const setCurrentUser = user => runTimeDal.setByPath('currentUser', {
+//     realMail:user.mail
+//         .replace(/\+.*@/g, '@')
+//         .replace(/\.(.*)@/g, '$1@'),
+//     ...user
+// })
