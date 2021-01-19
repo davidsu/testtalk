@@ -9,7 +9,6 @@
     "userinfo": "jest __test__/userInfo.test.js",
     "start": "node --no-warnings --experimental-modules ./runSystem.js"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
