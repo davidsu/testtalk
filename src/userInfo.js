@@ -1,3 +1,3 @@
-import runTimeDal  from './DAL.js'
-export const getCurrentUser = () => runTimeDal.getByPath('currentUser')
-export const setCurrentUser = user => runTimeDal.setByPath('currentUser', user)
+import DAL  from './DAL.js'
+export const getCurrentUser = () => DAL.getByPath('currentUser')
+export const setCurrentUser = ({name, mail}) => DAL.setByPath('currentUser', {name, mail})
