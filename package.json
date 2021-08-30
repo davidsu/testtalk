@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "lint": "eslint .",
     "test": "jest --coverage",
     "userinfo": "jest __test__/userInfo.test.js",
     "start": "node --no-warnings --experimental-modules ./runSystem.js"

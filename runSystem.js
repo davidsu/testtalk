@@ -3,11 +3,11 @@ import chalk from 'chalk'
 import app from './src/app.js'
 
 debugger
-const {DAL, userInfo, veryImportantStuff} = app()
+const {DAL, userInfo, vip} = app()
 
-userInfo.setCurrentUser({ mail: 'eli.b@walkme.com', name: 'Eli Blitz' })
+userInfo.setCurrentUser({ mail: 'david.susskind@walkme.com', name: 'David Susskind' })
 try {
-  veryImportantStuff.setVeryImportantUserState()
+  vip.set()
   console.log(colorize(JSON.stringify({
     currentUser: DAL.getByPath('currentUser'),
     importantUser: DAL.getByPath('importantUser')
