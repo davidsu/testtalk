@@ -9,6 +9,14 @@ describe('getCurrentUser', () => {
     expect(DAL.getByPath('isVip')).toBeTruthy()
   })
 
+  it('should be vip', () => {
+    const {vip, DAL} = testkit()
+      .withCurrentUser({ mail: 'eli.b@walkme.com', name: 'Eli Blitz' })
+      .withIsVip()
+      .build()
+    expect(vip.isVip()).toBeTruthy()
+  })
+
   it('should throw for user that is not very important', () => {
     const {vip} = testkit().build()
     expect(vip.enter).toThrow('dummy is BORING!!!')
