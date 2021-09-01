@@ -10,7 +10,7 @@ try {
   vip.set()
   console.log(colorize(JSON.stringify({
     currentUser: DAL.getByPath('currentUser'),
-    importantUser: DAL.getByPath('importantUser')
+    importantUser: DAL.getByPath('isVip')
   }, null, 4), {
     colors: {
       STRING_KEY: 'yellow',

@@ -6,7 +6,7 @@ describe('getCurrentUser', () => {
       .withCurrentUser({ mail: 'eli.b@walkme.com', name: 'Eli Blitz' })
       .build()
     vip.set()
-    expect(DAL.getByPath('importantUser')).toBeTruthy()
+    expect(DAL.getByPath('isVip')).toBeTruthy()
   })
 
   it('should throw for user that is not very important', () => {
