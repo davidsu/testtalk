@@ -20,6 +20,6 @@ describe('getCurrentUser', () => {
   it('should throw for user that is not very important', () => {
     currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
     const importantStuff = vipFactory(mockUserInfo, mockDAL)
-    expect(importantStuff.set).toThrow('dummy is not important')
+    expect(importantStuff.set).toThrow('dummy is BORING!!!')
   })
 })
