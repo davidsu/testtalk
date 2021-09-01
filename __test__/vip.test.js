@@ -6,12 +6,12 @@ import userInfoFactory from '../src/userInfo'
 import DALfactory from '../src/DAL'
 
 describe('getCurrentUser', () => {
-  it('should set application state when current user is veryImportant', () => {
+  it('should enter vip area', () => {
     const currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
     const DAL = DALfactory({currentUser})
     const vip = vipFactory(userInfoFactory(DAL), DAL)
     vip.set()
-    expect(DAL.getByPath('importantUser')).toBeTruthy()
+    expect(DAL.getByPath('isVip')).toBeTruthy()
   })
 
   it('should throw for user that is not very important', () => {
