@@ -12,7 +12,7 @@ const isIteresting = currentUser => !!vips.find(user => _.isEqual(currentUser, u
 
 export default function(userInfo, DAL) {
 
-  const set = () => {
+  const enter = () => {
     const currentUser = userInfo.getCurrentUser()
     if(!isIteresting(currentUser)) {
       console.error(chalk.red(`${currentUser.name} is BORING!!!`))
@@ -22,7 +22,7 @@ export default function(userInfo, DAL) {
   }
 
   return {
-    set
+    enter
   }
 }
 

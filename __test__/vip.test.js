@@ -5,12 +5,12 @@ describe('getCurrentUser', () => {
     const {vip, DAL} = testkit()
       .withCurrentUser({ mail: 'eli.b@walkme.com', name: 'Eli Blitz' })
       .build()
-    vip.set()
+    vip.enter()
     expect(DAL.getByPath('isVip')).toBeTruthy()
   })
 
   it('should throw for user that is not very important', () => {
     const {vip} = testkit().build()
-    expect(vip.set).toThrow('dummy is BORING!!!')
+    expect(vip.enter).toThrow('dummy is BORING!!!')
   })
 })
