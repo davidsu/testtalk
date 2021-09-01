@@ -10,11 +10,11 @@ const mockDAL = {
 }
 describe('getCurrentUser', () => {
   beforeEach(() => state = {})
-  it('should set importantUser', () => {
+  it('should enter vip area', () => {
     currentUser = { mail: 'david.susskind@walkme.com', name: 'David Susskind' }
     const vip = vipFactory(mockUserInfo, mockDAL)
     vip.set()
-    expect(state).toEqual({importantUser: true})
+    expect(state).toEqual({isVip: true})
   })
 
   it('should throw for user that is not very important', () => {
