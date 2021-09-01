@@ -10,7 +10,7 @@ describe('getCurrentUser', () => {
     const currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
     const DAL = DALfactory({currentUser})
     const vip = vipFactory(userInfoFactory(DAL), DAL)
-    vip.set()
+    vip.enter()
     expect(DAL.getByPath('isVip')).toBeTruthy()
   })
 
@@ -18,6 +18,6 @@ describe('getCurrentUser', () => {
     const currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
     const DAL = DALfactory({currentUser})
     const vip = vipFactory(userInfoFactory(DAL), DAL)
-    expect(vip.set).toThrow('dummy is BORING!!!')
+    expect(vip.enter).toThrow('dummy is BORING!!!')
   })
 })
