@@ -19,8 +19,11 @@ export default function(userInfo, DAL) {
     DAL.setByPath('isVip', true)
   }
 
+  const isVip = () => DAL.getByPath('isVip')
+
   return {
-    enter
+    enter,
+    isVip
   }
 }
 
