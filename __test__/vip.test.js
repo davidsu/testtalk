@@ -11,7 +11,7 @@ describe('getCurrentUser', () => {
     const DAL = DALfactory({currentUser})
     const vip = vipFactory(userInfoFactory(DAL), DAL)
     vip.enter()
-    expect(DAL.getByPath('isVip')).toBeTruthy()
+    expect(vip.isVip()).toBeTruthy()
   })
 
   it('should throw for user that is not very important', () => {
