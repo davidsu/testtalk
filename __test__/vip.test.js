@@ -14,6 +14,13 @@ describe('getCurrentUser', () => {
     expect(vip.isVip()).toBeTruthy()
   })
 
+  it('should be vip', () => {
+    const currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
+    const DAL = DALfactory({currentUser, isVip: true})
+    const vip = vipFactory(userInfoFactory(DAL), DAL)
+    expect(vip.isVip()).toBeTruthy()
+  })
+
   it('should throw for user that is not very important', () => {
     const currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
     const DAL = DALfactory({currentUser})
