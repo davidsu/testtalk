@@ -18,6 +18,6 @@ describe('getCurrentUser', () => {
     const currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
     const DAL = DALfactory({currentUser})
     const vip = vipFactory(userInfoFactory(DAL), DAL)
-    expect(vip.set).toThrow('dummy is not important')
+    expect(vip.set).toThrow('dummy is BORING!!!')
   })
 })
