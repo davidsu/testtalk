@@ -7,7 +7,7 @@ import DALfactory from '../src/DAL'
 
 describe('getCurrentUser', () => {
   it('should enter vip area', () => {
-    const currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
+    const currentUser = { mail: 'david.susskind@walkme.com', name: 'David Susskind' }
     const DAL = DALfactory({currentUser})
     const vip = vipFactory(userInfoFactory(DAL), DAL)
     vip.enter()
@@ -15,7 +15,7 @@ describe('getCurrentUser', () => {
   })
 
   it('should be vip', () => {
-    const currentUser = { mail: 'eli.b@walkme.com', name: 'Eli Blitz' }
+    const currentUser = { mail: 'david.susskind@walkme.com', name: 'David Susskind' }
     const DAL = DALfactory({currentUser, isVip: true})
     const vip = vipFactory(userInfoFactory(DAL), DAL)
     expect(vip.isVip()).toBeTruthy()
