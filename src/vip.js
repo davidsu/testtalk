@@ -8,7 +8,7 @@ const vips = [
 ]
 
 const isIteresting = currentUser => !!vips.find(user => _.isEqual(currentUser, user))
-// const isIteresting = ({mail, name}) => !!veryImportantUsers.find(user => _.isEqual({mail, name}, user))
+// const isIteresting = ({mail, name}) => !!vips.find(user => _.isEqual({mail, name}, user))
 
 export default function(userInfo, DAL) {
 
