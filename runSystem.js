@@ -7,7 +7,7 @@ const {DAL, userInfo, vip} = app()
 
 userInfo.setCurrentUser({ mail: 'david.susskind@walkme.com', name: 'David Susskind' })
 try {
-  vip.set()
+  vip.enter()
   console.log(colorize(JSON.stringify({
     currentUser: DAL.getByPath('currentUser'),
     importantUser: DAL.getByPath('isVip')

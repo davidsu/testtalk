@@ -13,13 +13,13 @@ describe('getCurrentUser', () => {
   it('should enter vip area', () => {
     currentUser = { mail: 'david.susskind@walkme.com', name: 'David Susskind' }
     const vip = vipFactory(mockUserInfo, mockDAL)
-    vip.set()
+    vip.enter()
     expect(state).toEqual({isVip: true})
   })
 
   it('should throw for user that is not very important', () => {
     currentUser = { mail: 'dummy@walkme.com', name: 'dummy' }
-    const importantStuff = vipFactory(mockUserInfo, mockDAL)
-    expect(importantStuff.set).toThrow('dummy is BORING!!!')
+    const vip = vipFactory(mockUserInfo, mockDAL)
+    expect(vip.enter).toThrow('dummy is BORING!!!')
   })
 })
