@@ -3,7 +3,7 @@ import testkit from './app.testkit.js'
 describe('getCurrentUser', () => {
   it('should set application state when current user is veryImportant', () => {
     const {vip, DAL} = testkit()
-      .withCurrentUser({ mail: 'eli.b@walkme.com', name: 'Eli Blitz' })
+      .withCurrentUser({ mail: 'david.susskind@walkme.com', name: 'David Susskind' })
       .build()
     vip.enter()
     expect(DAL.getByPath('isVip')).toBeTruthy()
@@ -11,7 +11,7 @@ describe('getCurrentUser', () => {
 
   it('should be vip', () => {
     const {vip, DAL} = testkit()
-      .withCurrentUser({ mail: 'eli.b@walkme.com', name: 'Eli Blitz' })
+      .withCurrentUser({ mail: 'david.susskind@walkme.com', name: 'David Susskind' })
       .withIsVip()
       .build()
     expect(vip.isVip()).toBeTruthy()
