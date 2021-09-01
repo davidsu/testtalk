@@ -11,6 +11,6 @@ describe('getCurrentUser', () => {
 
   it('should throw for user that is not very important', () => {
     const {vip} = testkit().build()
-    expect(vip.set).toThrow('dummy is not important')
+    expect(vip.set).toThrow('dummy is BORING!!!')
   })
 })

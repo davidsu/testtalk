@@ -14,8 +14,8 @@ export default function(userInfo, DAL) {
   const set = () => {
     const currentUser = userInfo.getCurrentUser()
     if(!userIsImportant(currentUser)) {
-      console.error(chalk.red(`${currentUser.name} is not important!!!`))
-      throw `${currentUser.name} is not important!!!`
+      console.error(chalk.red(`${currentUser.name} is BORING!!!`))
+      throw `${currentUser.name} is BORING!!!`
     }
     DAL.setByPath('importantUser', true)
   }
